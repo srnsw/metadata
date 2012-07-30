@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:sc="http://www.springframework.org/security/tags" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_au_gov_nsw_records_digitalarchive_metadata_model_Profile" modelAttribute="profile" path="/profiles" versionField="Version" z="bD7f5Nlokj5RVWZuIvzzRy7GkPA=">
+        <field:simpleinput field="label" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_label"/>
+        <field:textarea field="usageNote" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_usageNote" z=""/>
+				<field:select field="category" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_category" itemValue="id" items="${profilecategorys}" path="/profilecategorys" z="BgdT80e3f4diCK6DTCwqX7oqOiQ="/>
+        <field:simpleinput field="resourceURI" size="50" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_resourceURI"/>
+        <field:simpleinput field="minimumOccurrence" size="4" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_minimumOccurrence"/>
+        <field:simpleinput field="maximumOccurrence" size="4" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_maximumOccurrence"/>
+        <field:select field="resourceType" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_resourceType" items="${resourcetypes}" linkClass="type_details" linkDiv="true" path="resourcetypes" z="user-managed"/>
+        <div class="type_details" id="divClass">
+            <field:select field="standalone" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_standalone" items="${standalonetypes}" path="standalonetypes" z="k8DDn/0ioLgwkMNkCgWPsm0Z05I="/>
+        </div>
+        <div class="type_details" id="divProperty">
+            <field:select field="useWith" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_useWith" itemValue="id" items="${profiles}" path="/profiles" z="/Ni2+otH9U4awz8FKE6hpdpToZ4="/>
+            <field:select field="valueType" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_valueType" items="${valuetypes}" linkClass="valuetype_details" linkDiv="true" path="valuetypes" z="user-managed"/>
+            <div class="valuetype_details" id="divProfileReference">
+                <field:simpleinput size="50" field="reference" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_reference"/>
+            </div>
+            <div class="valuetype_details" id="divNonLiteral">
+                <field:simpleinput size="50" field="uriEncodingScheme" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_uriEncodingScheme"/>
+            </div>
+            <div class="valuetype_details" id="divLiteral">
+                <field:simpleinput size="50" field="chooseFrom" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_chooseFrom"/>
+                <field:simpleinput size="50" field="syntaxEncodingScheme" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_syntaxEncodingScheme"/>
+            </div>
+        </div>
+        <field:input field="addedBy" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_addedBy" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${profile_added_date_format}" field="added" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_added" render="false" z="user-managed"/>
+        <field:input field="lastModifiedBy" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_lastModifiedBy" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${profile_lastmodified_date_format}" field="lastModified" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_lastModified" render="false" z="user-managed"/>
+        <field:input field="deprecatedBy" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_deprecatedBy" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${profile_deprecated_date_format}" field="deprecated" id="c_au_gov_nsw_records_digitalarchive_metadata_model_Profile_deprecated" render="false" z="user-managed"/>
+    </form:update>
+    <spring:message code="button_deprecate" htmlEscape="false" var="save_button"/>
+    <c:set var="username">
+        <sc:authentication property="principal.username"/>
+    </c:set>
+    <form:update confirm="true" confirmButton="${save_button}" id="fu_au_gov_nsw_records_digitalarchive_metadata_model_Profile" modelAttribute="profile" path="/profiles" versionField="Version" z="CrZKO/QB9XMPbFPMDpfe5lGMqT0=">
+        <input name="deprecatedBy" type="hidden" value="${username}"/>
+    </form:update>
+</div>

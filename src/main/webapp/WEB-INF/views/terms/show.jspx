@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:sc="http://www.springframework.org/security/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <sc:authorize access="isAuthenticated()">
+        <!-- to prevent bugs, no update link at this page -->
+        <c:set value="false" var="updateable"/>
+    </sc:authorize>
+    <page:show create="false" delete="false" id="ps_au_gov_nsw_records_digitalarchive_metadata_model_Term" object="${term}" path="/terms" update="${updateable}" z="user-managed">
+        <field:display field="label" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_label" object="${term}" z="8EzmhRs8UHdExUAvgJM/USWTovQ="/>
+        <field:display field="usageNote" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_usageNote" object="${term}" z="m1g36v9Cwi3p5LS5z/4AZxPEVSE="/>
+        <field:display field="resourceType" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_resourceType" object="${term}" z="He7E/PUskasdvSV8nGQFLSDOBIQ="/>
+        <field:display field="domainURI" htmlLink="true" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_domainURI" object="${term}" z="user-managed"/>
+        <field:display field="rangeURI" htmlLink="true" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_rangeURI" object="${term}" z="user-managed"/>
+        <field:display field="seeAlso" htmlLink="true" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_seeAlso" object="${term}" z="user-managed"/>
+        <field:display field="coinedBy" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_coinedBy" object="${term}" z="hK/x5f6Aua7+eS6lCrg1e6jf3K8="/>
+        <field:display date="true" dateTimePattern="${term_coined_date_format}" field="coined" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_coined" object="${term}" z="ccfJYCESj/juSiD6gqjL3R71DdE="/>
+        <field:display field="lastModifiedBy" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_lastModifiedBy" object="${term}" z="Bmk5L84R+iqolhhXmaojrmXa0UI="/>
+        <field:display date="true" dateTimePattern="${term_lastmodified_date_format}" field="lastModified" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_lastModified" object="${term}" z="x0MuT7WIWlPXc1eUHzq3IU92AEo="/>
+        <field:display field="deprecatedBy" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_deprecatedBy" object="${term}" z="e9duJnR1/DsJ+UUpxMpxsiVWqak="/>
+        <field:display date="true" dateTimePattern="${term_deprecated_date_format}" field="deprecated" id="s_au_gov_nsw_records_digitalarchive_metadata_model_Term_deprecated" object="${term}" z="IclAwPNqqS6s61843UN2g0LyLjc="/>
+    </page:show>
+</div>
