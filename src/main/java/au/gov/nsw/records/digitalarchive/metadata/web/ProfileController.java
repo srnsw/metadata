@@ -17,10 +17,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import au.gov.nsw.records.digitalarchive.metadata.model.Profile;
 import au.gov.nsw.records.digitalarchive.metadata.model.ResourceType;
 import au.gov.nsw.records.digitalarchive.metadata.model.ValueType;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
 @RequestMapping("/profiles")
 @Controller
@@ -106,6 +110,17 @@ public class ProfileController {
 		return "redirect:/profiles";
 	}
 
+	@RequestMapping(value = "/{id}.xml", method = RequestMethod.GET, produces = "application/xml")
+	public  @ResponseBody String xml(@PathVariable("id") String label, Model uiModel) {
+		Profile prof = Profile.findProfilesByLabelEquals(label).getSingleResult();
+		XStream xStream = new XStream(new DomDriver());
+		
+		xStream.alias("profile", Profile.class);
+		//xStream.aliasField("minOccurence", Profile.class, "minimumOccurrence");
+		//xStream.useAttributeFor(Profile.class, "minimumOccurrence");
+		return xStream.toXML(prof);
+	}
+	
 	private Profile conditionalCleanUpFields(Profile profile){
 		if (profile.getResourceType() == ResourceType.Class){
 			profile.setUseWith(null);
