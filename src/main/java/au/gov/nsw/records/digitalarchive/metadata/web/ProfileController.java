@@ -1,6 +1,7 @@
 package au.gov.nsw.records.digitalarchive.metadata.web;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -110,17 +111,6 @@ public class ProfileController {
 		return "redirect:/profiles";
 	}
 
-	@RequestMapping(value = "/{id}.xml", method = RequestMethod.GET, produces = "application/xml")
-	public  @ResponseBody String xml(@PathVariable("id") String label, Model uiModel) {
-		Profile prof = Profile.findProfilesByLabelEquals(label).getSingleResult();
-		XStream xStream = new XStream(new DomDriver());
-		
-		xStream.alias("profile", Profile.class);
-		//xStream.aliasField("minOccurence", Profile.class, "minimumOccurrence");
-		//xStream.useAttributeFor(Profile.class, "minimumOccurrence");
-		return xStream.toXML(prof);
-	}
-	
 	private Profile conditionalCleanUpFields(Profile profile){
 		if (profile.getResourceType() == ResourceType.Class){
 			profile.setUseWith(null);
