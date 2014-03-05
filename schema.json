@@ -94,7 +94,7 @@
             "type": "object",
             "properties": {
               "pathway": {
-                "type": "string"
+                "type":{ "type" : "string", "pattern" : /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/ }
               },
               "agent": {
                 "$ref": "#/definitions/agent"
