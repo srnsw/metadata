@@ -99,7 +99,7 @@
             "type": "object",
             "properties": {
               "pathway": {
-                "type": "#/definitions/url"
+                "$ref": "#/definitions/url"
               },
               "agent": {
                 "$ref": "#/definitions/agent"
