@@ -8,7 +8,7 @@ The Digital Archives Metadata Registry:
 - informs users accessing the digital archives of the full set of searchable metadata fields in the system
 - provides a 'best practice' reference for NSW government agencies wishing to standardise metadata used in agency recordkeeping systems
 - provides a useful resource for the digital preservation and recordkeeping communities.
-
+- is automaticaly tested.
 
 ## Changes
 
