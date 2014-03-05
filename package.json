@@ -1,0 +1,16 @@
+{
+	"devDependencies" : {
+		"vows":">=0.5",
+		"jsonschema":">=0.4",
+		"assert":">=0",
+		"walk":">=0"
+	},
+
+	"scripts":{
+		"test":"vows"
+	},
+	
+	"engines": {
+    "node": ">=0.6"
+  }
+}
