@@ -1,0 +1,51 @@
+{
+  "title": "The Danny Archer Files",
+  "creators": [
+    {
+      "organisation": {
+        "name": "Lehane Corp."
+      }
+    }
+  ],
+  "recipients": [
+    {
+      "organisation": {
+        "name": "The Findlay Group"
+      }
+    }
+  ],
+  "attachedTo": "incomprehensiblestring983",
+  "versions": [
+    {
+      "version": 0,
+      "format": "fmt/40",
+      "mimetype": "application/msword",
+      "filesize": 91648
+    },
+    {
+      "version": 1,
+      "migrationAction": {
+        "pathway": "http://digitalarchives.records.nsw.gov.au/pathways/15",
+        "agent": {
+          "organisation": {
+            "name": "State Records Authority of NSW"
+          }
+        },
+        "generated": "2014-01-13T00:00:00.000Z"
+      },
+      "format": "fmt/18",
+      "mimetype": "applicaton/pdf",
+      "filesize": 160681
+    }
+  ],
+  "series": 1,
+  "disposalRule": {
+    "authority": "GA28",
+    "class": "1.1.1"
+  },
+  "accessRule": {
+    "accessDirection": 1,
+    "effect": "OPA",
+    "calculateFrom": "2013-10-31T00:00:00.000Z"
+  }
+}
