@@ -1,6 +1,6 @@
 # Metadata Registry
 
-The Digital Archives Metadata Registry is a publicly accessible web service that:
+The Digital Archives Metadata Registry:
 
 - allows Digital Archives staff to progressively register preferences for published metadata terms (e.g. Dublin Core) to represent common metadata elements in the digital archives
 - allows Digital Archives staff to progressively coin new terms (by providing a URI and description) to represent metadata elements in the digital archives for which no suitable published term can be identified
