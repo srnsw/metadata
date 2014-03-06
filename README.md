@@ -1,5 +1,7 @@
 # Metadata Registry
 
+[![Build Status](https://travis-ci.org/srnsw/metadata.png?branch=master)](https://travis-ci.org/srnsw/metadata)
+
 The Digital Archives Metadata Registry:
 
 - allows Digital Archives staff to progressively register preferences for published metadata terms (e.g. Dublin Core) to represent common metadata elements in the digital archives
