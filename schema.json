@@ -161,7 +161,7 @@
           ]
         },
         "calculateFrom": {
-          "type": "string"
+          "$ref": "#/definitions/W3CDate"
         }
       },
       "required": [
