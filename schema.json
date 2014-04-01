@@ -1,182 +1,183 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "definitions": {
-    "agent": {
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "person": {
-              "type": "object",
-              "properties": {
-                "surname": {
-                  "type": "string"
+    "$schema": "http://json-schema.org/schema#",
+    "definitions": {
+        "agent": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "person": {
+                            "type": "object",
+                            "properties": {
+                                "surname": {
+                                    "type": "string"
+                                },
+                                "firstname": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "organisation": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "minProperties": 1
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "person"
+                    ]
                 },
-                "firstname": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "organisation": {
-                  "type": "string"
+                {
+                    "type": "object",
+                    "properties": {
+                        "organisation": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "organisation"
+                    ]
                 }
-              },
-              "additionalProperties": false,
-              "minProperties": 1
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "person"
-          ]
+            ]
         },
-        {
-          "type": "object",
-          "properties": {
-            "organisation": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
+        "W3CDate": {
+            "type": "string",
+            "pattern": "/(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+)|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d)|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d)/"
+        },
+        "url": {
+            "type": "string",
+            "pattern": "^(?:(?:https?|ftp)?:?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))(?::\\d{2,5})?(?:\\/[^\\s]*)?$"
+        }
+    },
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "created": {
+            "$ref": "#/definitions/W3CDate"
+        },
+        "creators": {
+            "type": "array",
+            "items": {
+                "items": {
+                    "$ref": "#/definitions/agent"
                 }
-              },
-              "required": [
-                "name"
-              ],
-              "additionalProperties": false
             }
-          },
-          "additionalProperties": false,
-          "required": [
-            "organisation"
-          ]
-        }
-      ]
-    },
-    "W3CDate": {"type": "string",
-"pattern": "/(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+)|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d)|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d)/"},
-      "url":{ 
-        "type" : "string", 
-        "pattern" : "\/(http|ftp|https):\/\/[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:\/~+#-]*[\\w@?^=%&amp;\/~+#-])?\/" 
-      }
-
-  },
-  "type": "object",
-  "properties": {
-    "title": {
-      "type": "string"
-    },
-    "created": {
-      "$ref": "#/definitions/W3CDate"
-    },
-    "creators": {
-      "type": "array",
-      "items": {
-        "items": {
-          "$ref": "#/definitions/agent"
-        }
-      }
-    },
-    "recipients": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/agent"
-      }
-    },
-    "attachedTo": {
-      "type": "string"
-    },
-    "versions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "version": {
+        },
+        "recipients": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/agent"
+            }
+        },
+        "attachedTo": {
+            "type": "string"
+        },
+        "versions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "version": {
+                        "type": "number"
+                    },
+                    "migrationAction": {
+                        "type": "object",
+                        "properties": {
+                            "pathway": {
+                                "$ref": "#/definitions/url"
+                            },
+                            "agent": {
+                                "$ref": "#/definitions/agent"
+                            },
+                            "generated": {
+                                "$ref": "#/definitions/W3CDate"
+                            }
+                        }
+                    },
+                    "format": {
+                        "type": "string"
+                    },
+                    "mimetype": {
+                        "type": "string"
+                    },
+                    "filesize": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "version",
+                    "format",
+                    "filesize"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "series": {
             "type": "number"
-          },
-          "migrationAction": {
+        },
+        "disposalRule": {
             "type": "object",
             "properties": {
-              "pathway": {
-                "$ref": "#/definitions/url"
-              },
-              "agent": {
-                "$ref": "#/definitions/agent"
-              },
-              "generated": {
-                "$ref": "#/definitions/W3CDate"
-              }
-            }
-          },
-          "format": {
-            "type": "string"
-          },
-          "mimetype": {
-            "type": "string"
-          },
-          "filesize": {
-            "type": "number"
-          }
+                "authority": {
+                    "type": "string"
+                },
+                "class": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "authority",
+                "class"
+            ],
+            "additionalProperties": false
         },
-        "required": [
-          "version",
-          "format",
-          "filesize"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "series": {
-      "type": "number"
-    },
-    "disposalRule": {
-      "type": "object",
-      "properties": {
-        "authority": {
-          "type": "string"
-        },
-        "class": {
-          "type": "string"
+        "accessRule": {
+            "type": "object",
+            "properties": {
+                "accessDirection": {
+                    "type": "number"
+                },
+                "effect": {
+                    "type": "string",
+                    "enum": [
+                        "Early",
+                        "OPA",
+                        "CPA"
+                    ]
+                },
+                "calculateFrom": {
+                    "$ref": "#/definitions/W3CDate"
+                }
+            },
+            "required": [
+                "accessDirection",
+                "effect",
+                "calculateFrom"
+            ],
+            "additionalProperties": false
         }
-      },
-      "required": [
-        "authority",
-        "class"
-      ],
-      "additionalProperties": false
     },
-    "accessRule": {
-      "type": "object",
-      "properties": {
-        "accessDirection": {
-          "type": "number"
-        },
-        "effect": {
-          "type": "string",
-          "enum": [
-            "Early",
-            "OPA",
-            "CPA"
-          ]
-        },
-        "calculateFrom": {
-          "$ref": "#/definitions/W3CDate"
-        }
-      },
-      "required": [
-        "accessDirection",
-        "effect",
-        "calculateFrom"
-      ],
-      "additionalProperties": false
-    }
-  },
-  "required": [
-    "title",
-    "series",
-    "disposalRule",
-    "accessRule"
-  ],
-  "additionalProperties": false
+    "required": [
+        "title",
+        "series",
+        "disposalRule",
+        "accessRule"
+    ],
+    "additionalProperties": false
 }
