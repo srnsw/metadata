@@ -94,7 +94,9 @@
                 "type": "object",
                 "properties": {
                     "version": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 999
                     },
                     "migrationAction": {
                         "type": "object",
