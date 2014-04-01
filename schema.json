@@ -64,7 +64,7 @@
         },
         "mimetype":{
             "type":"string",
-            "pattern":"[\\w-]+/[\\w-]+"
+            "pattern":"[\\w+\\*-]+/[\\w\\*+-]+"
         }
     },
     "type": "object",
