@@ -1,23 +1,25 @@
 var vows = require('vows'),
-    assert = require('assert'),
-    fs = require('fs'),
-    schema = require('../schema.json'),
-    walk = require('walk'),
-    path = require('path');
+assert = require('assert'),
+fs = require('fs'),
+schema = require('../schema.json'),
+walk = require('walk'),
+path = require('path');
 
 var Validator = require('jsonschema').Validator;
 
 vows.describe('Metadata').addBatch({
-    'Schema': {
+    'Samples': {
         topic: new(Validator),
         'valid': function (validator) {
-            var walker  = walk.walk('../samples', { followLinks: false });
+            assert.notEqual(schema, null)
             
-            walker.on('file', function(root, stat, next) {
-                 var instance = require(path.join(root, stat.name));
-                 assert.isTrue(validator.validate(instance, schema).errors.length == 0);
-                next();
-            });
+            var files = fs.readdirSync(path.join(process.cwd(), 'samples'));
+
+            for (var file in files) {
+               var validation = validator.validate(require(path.join(process.cwd(), 'samples', files[file])), schema);
+               assert.isTrue(validation.errors.length==0)
+            }
+
         }
     }
 }).export(module);

@@ -55,12 +55,7 @@
       ]
     },
     "W3CDate": {"type": "string",
-        "pattern": "\\d{4}-[01]\\d-[0-3]\\d"},
-      "url":{ 
-        "type" : "string", 
-        "pattern" : "\/(http|ftp|https):\/\/[\\w-]+(\\.[\\w-]+)+([\\w.,@?^=%&amp;:\/~+#-]*[\\w@?^=%&amp;\/~+#-])?\/" 
-      }
-
+        "pattern": "\\d{4}-[01]\\d-[0-3]\\d"}
   },
   "type": "object",
   "properties": {
@@ -99,7 +94,7 @@
             "type": "object",
             "properties": {
               "pathway": {
-                "$ref": "#/definitions/url"
+                "type":"uri"
               },
               "agent": {
                 "$ref": "#/definitions/agent"
