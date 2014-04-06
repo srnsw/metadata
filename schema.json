@@ -65,37 +65,24 @@
         "mimetype":{
             "type":"string",
             "pattern":"[\\w+\\*-]+/[\\w\\*+-]+"
-        }
-    },
-    "type": "object",
-    "properties": {
-        "title": {
-            "type": "string"
         },
-        "created": {
-            "$ref": "#/definitions/W3CDate"
+        "fileCollection":{
+            "type": "object",
+                "properties": {
+                    "version": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 999
+                    },
+                    "files":{"type":"array", "items":{ "$ref": "#/definitions/file"}}
+                },
+                    "required": [
+                "version",
+                "files"
+            ]
         },
-        "creators": {
-            "type": "array",
-            "items": {
-                "items": {
-                    "$ref": "#/definitions/agent"
-                }
-            }
-        },
-        "recipients": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/agent"
-            }
-        },
-        "attachedTo": {
-            "type": "string"
-        },
-        "versions": {
-            "type": "array",
-            "items": {
-                "type": "object",
+        "file":{
+            "type": "object",
                 "properties": {
                     "version": {
                         "type": "number",
@@ -126,14 +113,38 @@
                         "type": "number",
                         "minimum": 0
                     }
-                },
-                "required": [
-                    "version",
-                    "format",
-                    "filesize"
-                ],
-                "additionalProperties": false
+        }
+    }
+    },
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "created": {
+            "$ref": "#/definitions/W3CDate"
+        },
+        "creators": {
+            "type": "array",
+            "items": {
+                "items": {
+                    "$ref": "#/definitions/agent"
+                }
             }
+        },
+        "recipients": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/agent"
+            }
+        },
+        "attachedTo": {
+            "type": "string"
+        },
+        "versions": {
+            "oneOf":[
+                {"type":"array", "items":[{ "$ref": "#/definitions/file"},{ "$ref": "#/definitions/fileCollection"} ]}
+            ]
         },
         "series": {
             "type": "number"
