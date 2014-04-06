@@ -1,0 +1,53 @@
+{
+  "title": "Multifile Example",
+  "created": "2013-01-01T00:00:00.000Z",
+  "creators": [
+    {
+      "organisation": {
+        "name": "Multifile"
+      }
+    }
+  ],
+  "versions": [
+    {
+      "version": 0,
+      "files": [
+        {
+          "filesize": 37752481,
+          "format": "fmt/17",
+          "mimetype": "application/pdf"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "files": [
+        {
+          "filesize": 3775248100,
+          "format": "fmt/17",
+          "mimetype": "application/pdf"
+        }
+      ]
+    },
+    {
+      "version": 2,
+      "files": [
+        {
+          "filesize": 3775248100,
+          "format": "fmt/17",
+          "mimetype": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "series": 999999,
+  "disposalRule": {
+    "authority": "GA28",
+    "class": "1.1.1"
+  },
+  "accessRule": {
+    "accessDirection": 9999999,
+    "effect": "Early",
+    "calculateFrom": "2013-01-01T00:00:00.000Z"
+  }
+}
