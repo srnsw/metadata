@@ -1,0 +1,43 @@
+{
+  "title": "Object with creators & recipients",
+  "created": "2000-01-01T00:00:00.000Z",
+  "creators": [
+    {
+      "person": {
+        "surname": "Name",
+        "firstname": "N"
+      }
+    }
+  ],
+  "recipients": [
+    {
+      "person": {
+        "email": "person1@example.com"
+      }
+    },
+    {
+      "person": {
+        "email": "person1@example.com"
+      }
+    },
+    {
+      "person": {
+        "email": "person1@example.com"
+      }
+    }
+  ],
+  "versions": [
+    {"version": 0, "files": [{"filesize": 100000,"format": "fmt/17","mimetype": "application/pdf"} ]},
+    {"version": 1, "files": [{"filesize": 100033,"format": "fmt/17","mimetype": "application/pdf"} ]}
+  ],
+  "series": 99999,
+  "disposalRule": {
+    "authority": "GA31",
+    "class": "1.1.1"
+  },
+  "accessRule": {
+    "accessDirection": 99999,
+    "effect": "OPA",
+    "calculateFrom": "2000-01-01T00:00:00.000Z"
+  }
+}
