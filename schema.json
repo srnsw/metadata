@@ -147,8 +147,6 @@
             "type": "string"
         },
         "versions": {
-            "oneOf": [
-                {
                     "type": "array",
                     "items": [
                         {
@@ -158,8 +156,6 @@
                             "$ref": "#/definitions/fileCollection"
                         }
                     ]
-                }
-            ]
         },
         "series": {
             "type": "number"
