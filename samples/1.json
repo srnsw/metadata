@@ -19,7 +19,7 @@
     {
       "version":0, 
       "files":[
-        {"name":"nameoffile.txt", "path":[] ,"filesize":1, "mimetype":"a/b"},
+        {"name":"nameoffile.txt", "display":true, "path":[] ,"filesize":1, "mimetype":"a/b"},
         {"name":"nameoffile1.txt", "path":["a"] ,"filesize":1, "mimetype":"a/b"},
         {"name":"nameoffile2.txt", "path":["b"] ,"filesize":1, "mimetype":"a/b"}
       ]
