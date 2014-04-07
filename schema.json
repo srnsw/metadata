@@ -97,7 +97,7 @@
         },
         "file": {
             "type": "object",
-            "required": [ "name", "path", "filesize"],
+            "required": [ "name", "path", "fileSize"],
             "properties": {
                 "name": {"type": "string"},
                 "path": {"type":"array", "items":[{"type":"string"}]},
