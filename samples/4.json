@@ -27,8 +27,8 @@
     }
   ],
   "versions": [
-    {"version": 0, "files": [{"name":"file.pdf", "path":[], "filesize": 100000,"format": "fmt/17","mimetype": "application/pdf"} ]},
-    {"version": 1, "files": [{"name":"file.pdf", "path":[], "filesize": 100033,"format": "fmt/17","mimetype": "application/pdf"} ]}
+    {"version": 0, "files": [{"name":"file.pdf", "path":[], "fileSize": 100000,"format": "fmt/17","mimeType": "application/pdf"} ]},
+    {"version": 1, "files": [{"name":"file.pdf", "path":[], "fileSize": 100033,"format": "fmt/17","mimeType": "application/pdf"} ]}
   ],
   "series": 99999,
   "disposalRule": {

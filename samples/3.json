@@ -13,10 +13,11 @@
       "version": 0,
       "files": [
         {
-          "name":"file.pdf", "path":[],
-          "filesize": 37752481,
+          "name":"file.pdf", 
+          "path":[],
+          "fileSize": 37752481,
           "format": "fmt/17",
-          "mimetype": "application/pdf"
+          "mimeType": "application/pdf"
         }
       ]
     },
@@ -24,10 +25,11 @@
       "version": 1,
       "files": [
         {
-          "name":"file.pdf", "path":[],
-          "filesize": 3775248100,
+          "name":"file.pdf", 
+          "path":[],
+          "fileSize": 3775248100,
           "format": "fmt/17",
-          "mimetype": "application/pdf"
+          "mimeType": "application/pdf"
         }
       ]
     },
@@ -35,10 +37,11 @@
       "version": 2,
       "files": [
         {
-          "name":"file.pdf", "path":[],
-          "filesize": 3775248100,
+          "name":"file.pdf", 
+          "path":[],
+          "fileSize": 3775248100,
           "format": "fmt/17",
-          "mimetype": "application/pdf"
+          "mimeType": "application/pdf"
         }
       ]
     }

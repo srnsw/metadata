@@ -103,8 +103,8 @@
                 "path": {"type":"array", "items":[{"type":"string"}]},
                 "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}},
                 "format": {"type": "string"},
-                "mimetype": {"$ref": "#/definitions/mimetype"},
-                "filesize": {"type": "number","minimum": 0},
+                "mimeType": {"$ref": "#/definitions/mimetype"},
+                "fileSize": {"type": "number","minimum": 0},
                 "display":{"type":"boolean"}
             },
             "additionalProperties": false

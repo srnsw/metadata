@@ -39,9 +39,9 @@
         {
           "name":"file.pdf", 
           "path":[],
-          "filesize": 5465,
+          "fileSize": 5465,
           "format": "fmt/17",
-          "mimetype": "application/pdf"
+          "mimeType": "application/pdf"
         }
       ]
     }
