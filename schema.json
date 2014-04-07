@@ -97,23 +97,17 @@
         },
         "file": {
             "type": "object",
-            "required": [ "name", "path"],
+            "required": [ "name", "path", "filesize"],
             "properties": {
                 "name": {"type": "string"},
                 "path": {"type":"array", "items":[{"type":"string"}]},
-                "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}
-                },
-                "format": {
-                    "type": "string"
-                },
-                "mimetype": {
-                    "$ref": "#/definitions/mimetype"
-                },
-                "filesize": {
-                    "type": "number",
-                    "minimum": 0
-                }
-            }
+                "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}},
+                "format": {"type": "string"},
+                "mimetype": {"$ref": "#/definitions/mimetype"},
+                "filesize": {"type": "number","minimum": 0},
+                "display":{"type":"boolean"}
+            },
+            "additionalProperties": false
         }
     },
     "type": "object",
@@ -143,9 +137,8 @@
         },
         "versions": {
             "type": "array",
-            "items": {
-                "$ref": "#/definitions/version"
-            }
+            "items": {"$ref": "#/definitions/version"},
+            "uniqueItems": true
         },
         "series": {
             "type": "number"
