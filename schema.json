@@ -3,56 +3,66 @@
     "definitions": {
         "agent": {
             "oneOf": [
-                {
+                { 
                     "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "object",
-                            "properties": {
-                                "surname": {
-                                    "type": "string"
-                                },
-                                "firstname": {
-                                    "type": "string"
-                                },
-                                "email": {
-                                    "type": "string"
-                                },
-                                "organisation": {
-                                    "type": "string"
-                                }
-                            },
-                            "additionalProperties": false,
-                            "minProperties": 1
-                        }
+                    "properties":{
+                        "person":{"$ref":"#/definitions/person"}
                     },
-                    "additionalProperties": false,
                     "required": [
                         "person"
-                    ]
+                    ],
+                "additionalProperties": false
                 },
-                {
+                { 
                     "type": "object",
-                    "properties": {
-                        "organisation": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "name"
-                            ],
-                            "additionalProperties": false
-                        }
+                    "properties":{
+                        "organisation":{"$ref":"#/definitions/organisation"}
                     },
-                    "additionalProperties": false,
                     "required": [
                         "organisation"
-                    ]
+                    ],
+                "additionalProperties": false
                 }
             ]
+        },
+        "organisation": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "additionalProperties": false
+        },
+        "person": {
+            "type": "object",
+                "properties": {
+                    "surname": {
+                        "type": "string"
+                    },
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "organisation": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/organisation"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
+                
+            },
+            "minProperties": 1,
+            "additionalProperties": false
         },
         "W3CDate": {
             "type": "string",
@@ -147,15 +157,15 @@
             "type": "string"
         },
         "versions": {
-                    "type": "array",
-                    "items": [
-                        {
-                            "$ref": "#/definitions/file"
-                        },
-                        {
-                            "$ref": "#/definitions/fileCollection"
-                        }
-                    ]
+            "type": "array",
+            "items": [
+                {
+                    "$ref": "#/definitions/file"
+                },
+                {
+                    "$ref": "#/definitions/fileCollection"
+                }
+            ]
         },
         "series": {
             "type": "number"

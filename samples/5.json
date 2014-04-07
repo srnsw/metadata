@@ -1,0 +1,57 @@
+{
+  "title": "Document",
+  "created": "2000-01-01T00:00:00.000Z",
+  "creators": [
+    {
+      "person": {
+        "surname": "Name",
+        "firstname": "P",
+        "organisation": {
+          "name": "Org 1"
+        }
+      }
+    }
+  ],
+  "recipients": [
+    {
+      "person": {
+        "surname": "Name",
+        "firstname": "M",
+        "organisation": {
+          "name": "Org 2"
+        }
+      }
+    },
+    {
+      "person": {
+        "surname": "Name",
+        "firstname": "N",
+        "organisation": {
+          "name": "Org 1"
+        }
+      }
+    }
+  ],
+  "versions": [
+    {
+      "version": 0,
+      "files": [
+        {
+          "filesize": 5465,
+          "format": "fmt/17",
+          "mimetype": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "series": 9999,
+  "disposalRule": {
+    "authority": "GA28",
+    "class": "1.1.1"
+  },
+  "accessRule": {
+    "accessDirection": 99999,
+    "effect": "OPA",
+    "calculateFrom": "2000-01-01T00:00:00.000Z"
+  }
+}

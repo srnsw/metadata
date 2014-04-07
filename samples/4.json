@@ -32,7 +32,7 @@
   ],
   "series": 99999,
   "disposalRule": {
-    "authority": "GA31",
+    "authority": "GA28",
     "class": "1.1.1"
   },
   "accessRule": {
