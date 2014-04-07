@@ -13,6 +13,7 @@
       "version": 0,
       "files": [
         {
+          "name":"file.pdf", "path":[],
           "filesize": 37752481,
           "format": "fmt/17",
           "mimetype": "application/pdf"
@@ -23,6 +24,7 @@
       "version": 1,
       "files": [
         {
+          "name":"file.pdf", "path":[],
           "filesize": 3775248100,
           "format": "fmt/17",
           "mimetype": "application/pdf"
@@ -33,6 +35,7 @@
       "version": 2,
       "files": [
         {
+          "name":"file.pdf", "path":[],
           "filesize": 3775248100,
           "format": "fmt/17",
           "mimetype": "application/pdf"

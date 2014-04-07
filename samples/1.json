@@ -17,25 +17,12 @@
   "attachedTo": "incomprehensiblestring983",
   "versions": [
     {
-      "version": 0,
-      "format": "fmt/40",
-      "mimetype": "application/msword",
-      "filesize": 91648
-    },
-    {
-      "version": 1,
-      "migrationAction": {
-        "pathway": "http://digitalarchives.records.nsw.gov.au/pathways/15",
-        "agent": {
-          "organisation": {
-            "name": "State Records Authority of NSW"
-          }
-        },
-        "generated": "2014-01-13T00:00:00.000Z"
-      },
-      "format": "fmt/18",
-      "mimetype": "applicaton/pdf",
-      "filesize": 160681
+      "version":0, 
+      "files":[
+        {"name":"nameoffile.txt", "path":[] ,"filesize":1, "mimetype":"a/b"},
+        {"name":"nameoffile1.txt", "path":["a"] ,"filesize":1, "mimetype":"a/b"},
+        {"name":"nameoffile2.txt", "path":["b"] ,"filesize":1, "mimetype":"a/b"}
+      ]
     }
   ],
   "series": 1,

@@ -76,7 +76,7 @@
             "type": "string",
             "pattern": "[\\w+\\*-]+/[\\w\\*+-]+"
         },
-        "fileCollection": {
+        "version": {
             "type": "object",
             "properties": {
                 "version": {
@@ -84,39 +84,23 @@
                     "minimum": 0,
                     "maximum": 999
                 },
-                "files": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/file"
-                    }
+                "files":{
+                    "type":"array",
+                    "items":[{"$ref": "#/definitions/file"}],
+                    "additionalProperties": false,
+                    "minItems": 1,
+                    "uniqueItems": true
                 }
-            },
-            "required": [
-                "version",
-                "files"
-            ]
+            },           
+            "required": [ "files","version"]            
         },
         "file": {
             "type": "object",
+            "required": [ "name", "path"],
             "properties": {
-                "version": {
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 999
-                },
-                "migrationAction": {
-                    "type": "object",
-                    "properties": {
-                        "pathway": {
-                            "$ref": "#/definitions/url"
-                        },
-                        "agent": {
-                            "$ref": "#/definitions/agent"
-                        },
-                        "generated": {
-                            "$ref": "#/definitions/W3CDate"
-                        }
-                    }
+                "name": {"type": "string"},
+                "path": {"type":"array"},
+                "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}
                 },
                 "format": {
                     "type": "string"
@@ -158,14 +142,9 @@
         },
         "versions": {
             "type": "array",
-            "items": [
-                {
-                    "$ref": "#/definitions/file"
-                },
-                {
-                    "$ref": "#/definitions/fileCollection"
-                }
-            ]
+            "items": {
+                "$ref": "#/definitions/version"
+            }
         },
         "series": {
             "type": "number"
