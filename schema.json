@@ -76,14 +76,15 @@
             "type": "string",
             "pattern": "[\\w+\\*-]+/[\\w\\*+-]+"
         },
+        "versionNumber": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 999
+        },
         "version": {
             "type": "object",
             "properties": {
-                "version": {
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 999
-                },
+                "version": {"$ref": "#/definitions/versionNumber"},
                 "files":{
                     "type":"array",
                     "items":[{"$ref": "#/definitions/file"}],
@@ -99,7 +100,7 @@
             "required": [ "name", "path"],
             "properties": {
                 "name": {"type": "string"},
-                "path": {"type":"array"},
+                "path": {"type":"array", "items":{"type":"string"}},
                 "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}
                 },
                 "format": {
