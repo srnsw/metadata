@@ -100,7 +100,7 @@
             "required": [ "name", "path"],
             "properties": {
                 "name": {"type": "string"},
-                "path": {"type":"array", "items":{"type":"string"}},
+                "path": {"type":"array", "items":[{"type":"string"}]},
                 "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}
                 },
                 "format": {
