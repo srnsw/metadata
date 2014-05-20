@@ -118,6 +118,9 @@
         "id": {
             "type": "string"
         },
+        "consignmentId": {
+            "type": "string"
+        },
         "metadataId": {
             "type": "string"
         },
