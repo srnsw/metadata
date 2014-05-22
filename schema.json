@@ -78,8 +78,7 @@
         },
         "versionNumber": {
             "type": "number",
-            "minimum": 0,
-            "maximum": 999
+            "minimum": 0
         },
         "version": {
             "type": "object",
@@ -101,7 +100,14 @@
             "properties": {
                 "name": {"type": "string"},
                 "path": {"type":"array", "items":[{"type":"string"}]},
-                "migrationAction": {"type": "object", "properties": {"pathway": {"$ref": "#/definitions/url"},"agent": {"$ref": "#/definitions/agent"},"generated": {"$ref": "#/definitions/W3CDate"}}},
+                "migrationAction": {
+                    "type": "object", 
+                    "properties": {
+                        "pathway": {"$ref": "#/definitions/url"},
+                        "agent": {"$ref": "#/definitions/agent"},
+                        "generated": {"$ref": "#/definitions/W3CDate"}
+                        }
+                },
                 "format": {"type": "string"},
                 "mimeType": {"$ref": "#/definitions/mimetype"},
                 "fileSize": {"type": "number","minimum": 0},
