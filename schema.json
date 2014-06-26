@@ -188,14 +188,16 @@
                         "CPA"
                     ]
                 },
+                "duration": {
+                    "type": "number"
+                },
                 "calculateFrom": {
                     "$ref": "#/definitions/W3CDate"
                 }
             },
             "required": [
                 "accessDirection",
-                "effect",
-                "calculateFrom"
+                "effect"
             ],
             "additionalProperties": false
         }
