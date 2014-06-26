@@ -1,0 +1,36 @@
+{
+  "title": "Emergency Alert Texts",
+  "created": "2009-12-05",
+  "creators": [
+    {
+      "organisation": {
+        "name": "Department of Premier and Cabinet",
+        "agencyID": 10
+      }
+    }
+  ],
+  "versions": [
+    {
+      "version": 0,
+      "files": [
+        {
+          "name": "091205-Emergency-Alert-Texts.pdf",
+          "display": true,
+          "path": [],
+          "filesize": 407960,
+          "format": "fmt/18",
+          "mimetype": "application/pdf"
+        }
+      ]
+    }
+  ],
+  "series": 2082,
+  "disposalRule": {
+    "authority": "GA13",
+    "class": "1.14"
+  },
+  "accessRule": {
+    "accessDirection": 1223,
+    "effect": "Early"
+  }
+}
