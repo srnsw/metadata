@@ -192,10 +192,12 @@
                     "$ref": "#/definitions/W3CDate"
                 }
             },
+            "optional":[
+                "calculateFrom"
+            ],
             "required": [
                 "accessDirection",
-                "effect",
-                "calculateFrom"
+                "effect"
             ],
             "additionalProperties": false
         }
