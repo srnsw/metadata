@@ -30,6 +30,9 @@
             "properties": {
                 "name": {
                     "type": "string"
+                },
+                "agencyID":{
+                    "type": "number"
                 }
             },
             "required": [
@@ -127,18 +130,13 @@
         "consignmentId": {
             "type": "string"
         },
-        "metadataId": {
-            "type": "string"
-        },
         "created": {
             "$ref": "#/definitions/W3CDate"
         },
         "creators": {
             "type": "array",
             "items": {
-                "items": {
                     "$ref": "#/definitions/agent"
-                }
             }
         },
         "recipients": {
