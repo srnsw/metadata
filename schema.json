@@ -127,8 +127,14 @@
         "id": {
             "type": "string"
         },
-        "consignmentId": {
+        "project": {
             "type": "string"
+        },
+        "consignmentId": {
+            "type": "string",
+             "deprecated" : {
+                "description" : "Please use 'project' instead."
+            } 
         },
         "created": {
             "$ref": "#/definitions/W3CDate"
